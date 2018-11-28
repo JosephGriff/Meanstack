@@ -4,7 +4,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://admin:hello123@ds239903.mlab.com:39903/lab5';
+var mongoDB = 'mongodb://joey:joseph1@ds153763.mlab.com:53763/mongo';
 mongoose.connect(mongoDB);
 
 var Schema = mongoose.Schema;
