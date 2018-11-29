@@ -13,9 +13,14 @@ import { MatInputModule,
   MatButtonModule,
   MatIconModule,
   MatToolbarModule,
-  MatExpansionModule} from '@angular/material';
+  MatExpansionModule,
+  MatGridListModule} from '@angular/material';
 import { PostCreateComponent } from './post-create/post-create.component';
 import { PostEditComponent } from './post-edit/post-edit.component';
+import { LibraryComponent } from './library/library.component';
+
+
+
 
 const appRoutes: Routes = [
   {
@@ -29,6 +34,10 @@ const appRoutes: Routes = [
   {
     path: 'edit/:id',
     component: PostEditComponent
+  },
+  {
+    path: 'library',
+    component: LibraryComponent
   }
 ];
 
@@ -38,7 +47,8 @@ const appRoutes: Routes = [
     AppComponent,
     PostDetailsComponent,
     PostCreateComponent,
-    PostEditComponent
+    PostEditComponent,
+    LibraryComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -53,7 +63,8 @@ const appRoutes: Routes = [
   MatButtonModule,
   MatToolbarModule,
   MatExpansionModule,
-  MatMenuModule
+  MatMenuModule,
+  MatGridListModule
   ],
   providers: [PostService],
   bootstrap: [AppComponent]

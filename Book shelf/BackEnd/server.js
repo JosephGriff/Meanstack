@@ -10,7 +10,8 @@ mongoose.connect(mongoDB);
 var Schema = mongoose.Schema;
 var postSchema = new Schema({
     title: String,
-    content: String
+    content: String,
+    genre: String
 })
 var PostModel = mongoose.model('post', postSchema);
 
@@ -41,10 +42,12 @@ app.post('/api/posts', function(req, res){
     console.log("post successful");
     console.log(req.body.title);
     console.log(req.body.content);
+    console.log(req.body.genre);
 
     PostModel.create({
         title: req.body.title,
-        content: req.body.content
+        content: req.body.content,
+        genre: req.body.genre
     });
     res.send('Item added');
 
@@ -71,6 +74,7 @@ app.put('/api/posts/:id', function(req, res){
     console.log("Update Post" +req.params.id);
     console.log(req.body.title);
     console.log(req.body.content);
+    console.log(req.body.genre);
 
     PostModel.findByIdAndUpdate(req.params.id, req.body, 
         function(err, data){

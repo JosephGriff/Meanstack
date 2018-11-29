@@ -6,6 +6,7 @@ import {PostService} from '../services/post.service';
 import { NgForm } from "@angular/forms";
 
 
+
 @Component({
   selector: 'app-post-edit',
   templateUrl: './post-edit.component.html',
@@ -14,7 +15,8 @@ import { NgForm } from "@angular/forms";
 export class PostEditComponent implements OnInit {
   post : any = [];
   myTitle : String; 
-  myContent : String; 
+  myContent : String;
+  myGenre : string; 
   constructor(private router:Router, private route: ActivatedRoute, private service:PostService) { }
 
   ngOnInit() {
@@ -29,7 +31,7 @@ export class PostEditComponent implements OnInit {
     });
   }
   onEditPost(form: NgForm) {
-    this.service.updatePost(this.post._id, form.value.title, form.value.content).subscribe(() =>
+    this.service.updatePost(this.post._id, form.value.title, form.value.content, form.value.genre).subscribe(() =>
     {
       this.router.navigate(['/list']);
     });

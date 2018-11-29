@@ -5,25 +5,38 @@
         matInput
         type="text"
         name="title"
+        placeholder="Book title"
         ngModel
         required
         minlength="3"
         #title="ngModel">
-      <mat-error *ngIf="title.invalid">Please enter a post title.</mat-error>
+      <mat-error *ngIf="title.invalid">Please enter a Book title.</mat-error>
     </mat-form-field>
     <mat-form-field>
       <textarea
         matInput
         rows="4"
         name="content"
+        placeholder="Authors name"
         ngModel
         required
         #content="ngModel"></textarea>
-      <mat-error *ngIf="content.invalid">Please enter a post title.</mat-error>
+      <mat-error *ngIf="content.invalid">Please enter the authors name.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea
+        matInput
+        rows="4"
+        name="genre"
+        placeholder="Genre"
+        ngModel
+        required
+        #genre="ngModel"></textarea>
+      <mat-error *ngIf="genre.invalid">Please enter the books genre.</mat-error>
     </mat-form-field>
     <button
       mat-raised-button
       color="accent"
-      type="submit">Save Post</button>
+      type="submit">Save Book</button>
   </form>
 </mat-card>

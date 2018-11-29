@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import {Post} from '../post.model';
 import {Router, ActivatedRoute} from '@angular/router';
 
+
+
 @Component({
   selector: 'app-post-details',
   templateUrl: './post-details.component.html',

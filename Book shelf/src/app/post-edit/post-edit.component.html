@@ -19,11 +19,21 @@
         required
         #content="ngModel">
       </textarea>
-      <mat-error *ngIf="content.invalid">Please enter a post title.</mat-error>
+      <mat-error *ngIf="content.invalid">Please enter a Book title.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea
+        matInput
+        rows="4"
+        name="genre"
+        ngModel = {{post.genre}}
+        required
+        #genre="ngModel"></textarea>
+      <mat-error *ngIf="genre.invalid">Please enter the books genre.</mat-error>
     </mat-form-field>
     <button
       mat-raised-button
       color="accent"
-      type="submit">Update Post</button>
+      type="submit">Update Book shelf</button>
   </form>
 </mat-card>
