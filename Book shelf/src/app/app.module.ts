@@ -21,7 +21,7 @@ import { LibraryComponent } from './library/library.component';
 
 
 
-
+//setting up route paths
 const appRoutes: Routes = [
   {
     path: 'list',
